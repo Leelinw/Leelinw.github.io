@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css">
 
     < !--拖拽小彩蛋 -->
-        <script>
+        <script src="Bmob-2.2.5.min.js">
             window.onload = function () {
 
                 var speed = 5;
@@ -63,6 +63,26 @@
                 document.onkeyup = function () {
                     dir = 0;
                 }
+            }
+
+            // Bmob使用
+            Bmob.initialize("738e55e27ab32a2c", "123456");
+            Bmob.debug(true)
+            function register() {
+                let params = {
+                    username: document.getElementById("username").value,
+                    upwd: document.getElementById("upwd").value,
+                    sex: document.getElementById("sex").value,
+                    zu: document.getElementById("zu").value,
+                    phone: document.getElementById("tel").value,
+                    QQ: document.getElementById("QQ").value,
+                    zy: document.getElementById("zy").value,
+                }
+                Bmob.User.register(params).then(res => {
+                    alert("报名成功！");
+                }).catch(err => {
+                    alert(err.error);
+                });
             }
         </script>
 </head>
@@ -480,9 +500,9 @@
                     <!-- 姓名与学号 -->
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="uname" class="control-label col-md-3">姓名</label>
+                            <label for="username" class="control-label col-md-3">姓名</label>
                             <div class="col-md-9">
-                                <input type="text" id="uname" class="form-control" placeholder="请输入姓名">
+                                <input type="text" id="username" class="form-control" placeholder="请输入姓名">
                             </div>
                         </div>
                         <div class="form-group col-md-6">
@@ -497,7 +517,7 @@
                         <div class="form-group col-md-6">
                             <label class="control-label col-md-3">性别</label>
                             <div class="col-md-9">
-                                <select class="form-control">
+                                <select class="form-control" id="sex">
                                     <option>请选择性别</option>
                                     <option>男</option>
                                     <option>女</option>
@@ -507,7 +527,7 @@
                         <div class="form-group col-md-6">
                             <label class="control-label col-md-3">组别</label>
                             <div class="col-md-9">
-                                <select class="form-control">
+                                <select class="form-control" id="zu">
                                     <option>请选择报名组别</option>
                                     <option>智能组</option>
                                     <option>开发组</option>
@@ -518,15 +538,15 @@
                     <!-- 电话与QQ -->
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="uname" class="control-label col-md-3">电话</label>
+                            <label for="tel" class="control-label col-md-3">电话</label>
                             <div class="col-md-9">
-                                <input type="text" id="uname" class="form-control" placeholder="请输入电话">
+                                <input type="text" id="tel" class="form-control" placeholder="请输入电话">
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="upwd" class="control-label col-md-3">QQ</label>
+                            <label for="QQ" class="control-label col-md-3">QQ</label>
                             <div class="col-md-9">
-                                <input type="text" id="upwd" class="form-control" placeholder="请输入QQ">
+                                <input type="text" id="QQ" class="form-control" placeholder="请输入QQ">
                             </div>
                         </div>
                     </div> <br>
@@ -535,7 +555,7 @@
                         <div class="form-group col-md-6">
                             <label class="control-label col-md-3">专业</label>
                             <div class="col-md-9">
-                                <select class="form-control">
+                                <select class="form-control" id="zy">
                                     <option>请选择专业类别</option>
                                     <option>计算机科学与技术</option>
                                     <option>数字科学与大数据技术</option>
@@ -548,7 +568,8 @@
                         <div class="form-group col-md-6">
                             <!-- 提交按钮 -->
                             <div class="form-group">
-                                <div class="col-md-offset-6"><button class="btn btn-primary">点击提交</button></div>
+                                <div class="col-md-offset-6"><button class="btn btn-primary"
+                                        onclick="register()">点击提交</button></div>
                             </div>
                         </div>
                     </div>
