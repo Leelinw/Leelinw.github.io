@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="Bmob-2.2.5.min.js">
+        // Bmob使用
+        Bmob.initialize("738e55e27ab32a2c", "123456");
+        Bmob.debug(true);
+        function login() {
+            Bmob.User.login(document.getElementById("username").value, document.getElementById("upwd").value, document.getElementById("sex").value, document.getElementById("zu").value, document.getElementById("tel").value, document.getElementById("QQ").value, document.getElementById("zy").value).then(res => {
+                location.href = "userinfo.html";
+            }).catch(err => {
+                alert(err.error)
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- 报名 -->
+    <div class="bm container">
+        <h1 id="tag5" style="font-weight: bolder;">欢迎报考启明星</h1>
+        <img id="heng" src="img/heng.jpg">
+        <br> <br>
+        <p class="zi" style="font-size: medium;">快来填写你的信息，加入我们吧！</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="address">
+                    <h2 class="glyphicon glyphicon-map-marker" style="font-weight: bold; font-size: 25px;"> 招新宣讲会地点
+                    </h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;"> 湖北省宜昌市三峡大学信息科学楼</p>
+                </div>
+                <div class="email">
+                    <h2 class="glyphicon glyphicon-envelope" style="font-weight: bold; font-size: 25px;"> Email</h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;">ctguqmx@iloveyxr.top</p>
+                </div>
+                <div class="phone">
+                    <h2 class="glyphicon glyphicon-earphone" style="font-weight: bold; font-size: 25px;"> Call</h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;">17786170105</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <!-- <form action="#" class="form-horizontal" role="form"> -->
+                <br>
+                <!-- 姓名与学号 -->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="username" class="control-label col-md-3">姓名</label>
+                        <div class="col-md-9">
+                            <input type="text" id="username" class="form-control" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="upwd" class="control-label col-md-3">学号</label>
+                        <div class="col-md-9">
+                            <input type="text" id="upwd" class="form-control" placeholder="请输入密码">
+                        </div>
+                    </div>
+                </div> <br>
+                <!-- 性别与报名组别 -->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="control-label col-md-3">性别</label>
+                        <div class="col-md-9">
+                            <select class="form-control" id="sex">
+                                <option>请选择性别</option>
+                                <option>男</option>
+                                <option>女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label col-md-3">组别</label>
+                        <div class="col-md-9">
+                            <select class="form-control" id="zu">
+                                <option>请选择报名组别</option>
+                                <option>智能组</option>
+                                <option>开发组</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> <br>
+                <!-- 电话与QQ -->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="tel" class="control-label col-md-3">电话</label>
+                        <div class="col-md-9">
+                            <input type="text" id="tel" class="form-control" placeholder="请输入电话">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="QQ" class="control-label col-md-3">QQ</label>
+                        <div class="col-md-9">
+                            <input type="text" id="QQ" class="form-control" placeholder="请输入QQ">
+                        </div>
+                    </div>
+                </div> <br>
+                <!-- 专业类别 -->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="control-label col-md-3">专业</label>
+                        <div class="col-md-9">
+                            <select class="form-control" id="zy">
+                                <option>请选择专业类别</option>
+                                <option>计算机科学与技术</option>
+                                <option>数字科学与大数据技术</option>
+                                <option>数字媒体技术</option>
+                                <option>物联网工程</option>
+                                <option>电子信息类</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <!-- 提交按钮 -->
+                        <div class="form-group">
+                            <div class="col-md-offset-6"><button class="btn btn-primary" onclick="login()">点击提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

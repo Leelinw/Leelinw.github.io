@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css">
 
     < !--拖拽小彩蛋 -->
-        <script src="Bmob-2.2.5.min.js">
+        <script>
             window.onload = function () {
 
                 var speed = 5;
@@ -64,10 +64,12 @@
                     dir = 0;
                 }
             }
+        </script>
 
+        <script src="Bmob-2.2.5.min.js">
             // Bmob使用
             Bmob.initialize("738e55e27ab32a2c", "123456");
-            Bmob.debug(true)
+            Bmob.debug(true);
             function register() {
                 let params = {
                     username: document.getElementById("username").value,
@@ -76,12 +78,12 @@
                     zu: document.getElementById("zu").value,
                     phone: document.getElementById("tel").value,
                     QQ: document.getElementById("QQ").value,
-                    zy: document.getElementById("zy").value,
+                    zy: document.getElementById("zy").value
                 }
                 Bmob.User.register(params).then(res => {
-                    alert("报名成功！");
+                    location.href = "login.html";
                 }).catch(err => {
-                    alert(err.error);
+                    alert(err.error)
                 });
             }
         </script>
