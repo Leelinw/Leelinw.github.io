@@ -9,6 +9,8 @@
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="Bmob-2.2.5.min.js"></script>
+
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 
@@ -64,16 +66,15 @@
                     dir = 0;
                 }
             }
-        </script>
 
-        <script src="Bmob-2.2.5.min.js">
+
             // Bmob使用
             Bmob.initialize("738e55e27ab32a2c", "123456");
             Bmob.debug(true);
             function register() {
                 let params = {
                     username: document.getElementById("username").value,
-                    upwd: document.getElementById("upwd").value,
+                    password: document.getElementById("upwd").value,
                     sex: document.getElementById("sex").value,
                     zu: document.getElementById("zu").value,
                     phone: document.getElementById("tel").value,
