@@ -1,0 +1,82 @@
+/* 介绍 */
+.intro {
+    width: auto;
+    height: 600px;
+    padding: 100px 200px;
+}
+
+.intro,.how h1 {
+    color: rgb(0,0,0,0.8);
+}
+.intro p.zi,.fz p.zi {
+    color: rgb(0,0,0,0.6);
+}
+
+/* 右侧盒子 */
+.shi {
+    width: 500px;
+    height: 200px;
+    margin-right: 30px;
+    float: right;
+}
+
+/* 报名流程 */
+.how {
+    width: auto;
+    padding: 100px 200px;
+    height: 800px;
+    margin-top: 100px;
+    background-image: url(img/黑色.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+/* 小介绍 */
+.little {
+    height: 700px;
+    padding: 100px;
+}
+
+/* 为什么选择 */
+.why {
+    padding: 40px 30px 10px 30px;
+    height:250px; 
+    background-image: url(img/浅蓝色.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+/* 作品展示 */
+.show {
+    height: 800px;
+    margin-top: 100px;
+}
+
+/* 分组情况 */
+.fz {
+    height: 800px;
+    padding: 80px 30px 0 30px;
+    background-image: url(img/简约.jpg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+/* 报名 */
+.bm {
+    padding: 80px 30px 0 30px;
+    height: 600px;
+}
+
+/* 底部 */
+.bottom {
+    padding: 25px;
+    height: 300px;
+    background-color: #000;
+}
+
+/* 彩蛋 */
+#box {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+}

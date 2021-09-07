@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>启明星招新网站</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- 引用style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    < !--拖拽小彩蛋 -->
+        <script>
+            window.onload = function () {
+
+                var speed = 5;
+                // 创建一个变量来控制方向
+                var dir = 0;
+
+                // 开启一个定时器来控制div的移动
+                setInterval(function () {
+                    // 左37 上38 右39 下40
+                    switch (dir) {
+                        case 37:
+                            box.style.left = box.offsetLeft - speed + "px";
+                            break;
+                        case 38:
+                            box.style.top = box.offsetTop - speed + "px";
+                            break;
+                        case 39:
+                            box.style.left = box.offsetLeft + speed + "px";
+                            break;
+                        case 40:
+                            box.style.top = box.offsetTop + speed + "px";
+                            break;
+                    }
+                })
+
+                document.onkeydown = function (event) {
+                    event = event || window.event;
+
+                    // 用户摁了ctrl速度加快
+                    if (event.ctrlKey) {
+                        speed = 10;
+                    } else {
+                        speed = 5;
+                    }
+
+                    // 使dir等于键值
+                    dir = event.keyCode;
+                }
+
+                // 当按键松开时，div不再移动
+                document.onkeyup = function () {
+                    dir = 0;
+                }
+            }
+        </script>
+</head>
+
+<body>
+    <!-- 固定的头部导航栏 -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- 启明星字体设置 -->
+            <div class="navbar-header" style="height: 70px; padding: 10px 150px 10px 200px;">
+                <a class="navbar-brand" href="#" style="font-size: 30px; color: black; font-weight: bolder;">
+                    启明星</a>
+            </div>
+            <!-- 导航具体内容 -->
+            <div>
+                <ul id="intro" class="nav navbar-nav" style="padding: 10px;">
+                    <li><a href="#" style="color: black;">招新首页</a></li>
+                    <li><a href="#tag1" style="color: black;">简介</a></li>
+                    <li><a href="#tag2" style="color: black;">报名流程</a></li>
+                    <li><a href="#tag3" style="color: black;">作品展示</a></li>
+                    <li><a href="#tag4" style="color: black;">分组情况</a></li>
+                    <li><a href="#tag5" style="color: black;">报名</a></li>
+                    <!-- 下拉导航栏 -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">启明星工作室简介</a></li>
+                            <li><a href="https://oj.ctguqmx.cn/" target="-blank">启明星OJ</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://ctguqmx.gitee.io/hello-qmx/" target="-blank">工作室论坛</a></li>
+                            <li><a href="https://space.bilibili.com/1897118941/" target="-blank">工作室B站</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <form class="navbar-form navbar-right" role="search" style="padding: 10px 150px 10px 10px;">
+                <button for="tag5" type="submit" class="btn btn-default">
+                    点击报名
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 轮播图 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- 小按钮 -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="continer">
+            <div class="carousel-inner" role="listbox" style="background-attachment: fixed;">
+                <div class="item active">
+                    <img src="img/img1.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="img/img2.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="img/img3.jpg" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="box"><img src="img/启明星.jpg" alt="" style="width: 70px; height: 70px;"></div>
+    </div>
+
+    <!-- 简介 -->
+
+    <div class="intro">
+        <h1 id="tag1" style="font-weight: bolder;">启明星简介</h1>
+        <img id="heng" src="img/heng.jpg">
+        <br><br>
+        <p class="zi" style="font-size: medium;">
+            工作室成立以来，从刚开始的十几名学生，发展到一百多名学生。我们自己管理自己，常常有老师通过项目开发的方式辅导我们，我们也努力的学习软件开发的新技术。在老一代成员的带领下，我们不断地传承理想。工作室一方面解决同学们动手能力落后于其他高校的现状，促进同学们的就业，为同学们实现理想提供优良的环境与基石；另一方面工作室是同学们展示能力，提高技术的平台，这里集中了三峡大学最优秀的软件开发、网站制作、数据库开发、影视编辑、硬件编程、三维可视化、游戏开发的本科生。
+        </p>
+        <br>
+        <p style="font-size: medium;"> 我们来自三峡大学计算机与信息学院。
+        <div class="shi">
+            <p style="font-size: medium;">Make a difference是工作室的理念，来自李开复老师的一篇文章：“知道什么是make a
+                difference吗？想象有两个世界，一个世界中有你，一个世界中没有你，让两者的不同最大，最大化你的影响力，这就是你一生的意义。”
+                希望所有人在工作室这个平台能实现自己的梦想，最大化自己的不同。同样，工作室的目的也在于此，让今天的你与昨天的你不同，让四年后的你与现在的你不同。</p>
+        </div>
+        </p>
+        <br>
+        <p style="font-size: medium;"><img id="know" src="img/gou.jpg" alt=""> 今日之启明，明日之明星，是我们共同的信念。</p> <br>
+        <p style="font-size: medium;"><img id="know" src="img/gou.jpg" alt=""> Make a difference是我们执着的追求。</p> <br>
+        <p style="font-size: medium;"><img id="know" src="img/gou.jpg" alt=""> 这是我们自己的天地，它有一个充满活力而且响亮名字：“启明星”！</p>
+        <br>
+        <a href="#tag2"><img src="img/know.jpg" alt="" width="130px" height="50px"></a>
+    </div>
+
+    <!-- 报名流程 -->
+    <div class="how">
+        <h1 id="tag2" style="font-weight: bolder; color: white;">报名流程</h1>
+        <img id="heng" src="img/heng.jpg">
+        <br><br>
+        <!-- 折叠插件 -->
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-asterisk" style="font-weight: bolder; height: 30px; padding: 5px;"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            招新宣传
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <!-- in 让它一开始就展开 -->
+                    <div class="panel-body">
+                        宣传时间:1.20-笔试前
+                        <hr>
+                        主要宣传启明星福利和资源,以及启明星工作制度等等,具体请看下面内容
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-cloud"
+                            style="font-weight: bolder; height: 30px;  padding: 5px 0 5px 55px;" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseTwo">
+                            招新宣讲
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Time:3月13号-3月14号(具体请按照QQ群为主)
+                        <hr>
+                        为了防止大家有遗憾,我们将在3.14开宣讲会,来回答大家的问题,具体时间将公布在qq群里
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-search"
+                            style="font-weight: bolder; height: 30px;  padding: 5px 0 5px 110px;" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseThree">
+                            招新报名
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        启明星春季招新报名3.1正式开始，大家确定自己想要报考的组别后可以踊跃参与报名
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-time"
+                            style="font-weight: bolder; height: 30px;  padding: 5px 0 5px 165px;" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseFour">
+                            招新笔试
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Time:3月20号-3月21号(具体请按照QQ群为主) <br>
+                        进行笔试考核，通过试题，检测对于编程知识的掌握情况
+                        <hr>
+                        Tips:笔试时间和地址将于后续公布于QQ群中
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-flag"
+                            style="font-weight: bolder; height: 30px;  padding: 5px 0 5px 220px;" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseFive">
+                            招新面试
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Time:3月27号-3月28号(具体请按照QQ群为主) <br>
+                        对通过了笔试的考生进行面试，对考生的编程知识掌握情况进行进一步的了解
+                        <hr>
+                        Tips:面试时间和地址将于后续通知给通过笔试的考生
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="glyphicon glyphicon-heart"
+                            style="font-weight: bolder; height: 30px; padding: 5px 0 5px 270px;" data-toggle="collapse"
+                            data-parent="#accordion" href="#collapseSix">
+                            欢迎来到启明星
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Time:3月31号(具体请按照QQ群为主)
+                        <hr>
+                        我们将通知通过面试和笔试的同学参加启明星工作室，欢迎大家成为启明星的一份子
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 小介绍 -->
+    <div class="little">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="icon-box mt-5 mt-lg-0">
+                        <i class="bx bx-receipt"></i>
+                        <h2 class="glyphicon glyphicon-list-alt" style="font-weight: bolder;"> 启明星的日常</h2>
+                        <p style="font-size: medium;">
+                            启明星工作室给组内成员提供了便利的学习环境和氛围，不再需要去和考研的学长学姐们争夺图书馆的座位。每周还会给组内成员下发周任务，敦促所有人的学习</p>
+                    </div>
+                    <div class="icon-box mt-5">
+                        <i class="bx bx-cube-alt"></i>
+                        <h2 class="glyphicon glyphicon-indent-right" style="font-weight: bolder;"> 启明星的奖惩机制</h2>
+                        <p style="font-size: medium;">
+                            在启明星，奖惩是十分分明的。若没有按时完成周任务或没有完成每周要求的打卡次数，都会受到一定的惩罚。同时，在各类竞赛中取得优异的成绩也会受到一定的奖励</p>
+                    </div>
+                    <div class="icon-box mt-5">
+                        <i class="bx bx-images"></i>
+                        <h2 class="glyphicon glyphicon-gift" style="font-weight: bolder;"> 启明星的资源和福利</h2>
+                        <p style="font-size: medium;">
+                            启明星工作室在三峡大学计算机与信息学院就如“王牌”一般存在，有不少成绩优异的学长学姐都出自于这里。数年来的沉淀，让启明星工作室的资源已经十分雄厚</p>
+                    </div>
+                    <div class="icon-box mt-5">
+                        <i class="bx bx-shield"></i>
+                        <h2 class="glyphicon glyphicon-leaf" style="font-weight: bolder;"> 启明星成员的方向</h2>
+                        <p style="font-size: medium;">启明星工作室目前主要分为开发组和智能组两大组，成员各自发展的方向十分广泛。（如游戏开发，Python爬虫，数据分析，单片机等等）
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-offset-1">
+                    <img src="img/史迪仔.jpg" style="padding-top: 10px; height: 500px; width: 500px;" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 为什么选择 -->
+    <div class="why">
+        <div class="container">
+            <div class="row" style="position: absolute;">
+                <div class="col-lg-9 text-lg-left">
+                    <h2 style="font-weight: bolder;">为什么选择我们？</h2>
+                    <br>
+                    <p style="font-size: medium;">
+                        工作室成立以来，从刚开始的十几名学生，发展到一百多名学生。我们自己管理自己，常常有老师通过项目开发的方式辅导我们，我们也努力的学习软件开发的新技术。在老一代成员的带领下，我们不断地传承理想。工作室一方面解决同学们动手能力落后于其他高校的现状，促进同学们的就业，为同学们实现理想提供优良的环境与基石；另一方面工作室是同学们展示能力，提高技术的平台，这里集中了三峡大学最优秀的软件开发、网站制作、数据库开发、影视编辑、硬件编程、三维可视化、游戏开发的本科生。
+                    </p>
+                </div>
+                <div class="col-lg-3 cta-btn-container text-center" style="padding: 100px 50px;">
+                    <a class="btn btn-success align-middle" href="#tag5">点此报名</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="show container">
+        <h1 id="tag3" style="font-weight: bolder;">作品展示</h1>
+        <img id="heng" src="img/heng.jpg">
+        <br> <br>
+        <p style="font-size: medium;">秉承着“今天启明星是你的骄傲，明天你的启明星的骄傲”的宗旨，一届又一届的“启明星”创下了无数辉煌的成就！也许下一个“启明星”就是你。</p>
+        <hr>
+        <!-- 胶囊式导航 -->
+        <ul class="nav nav-pills nav-justified" style="padding: 0 300px;">
+            <li style="font-size: medium;"><a href="https://www.bilibili.com/video/BV1Ey4y1U78L" target="_blank">宣传片</a>
+            </li>
+            <li style="font-size: medium;"><a href="https://www.bilibili.com/video/BV1ho4y1Z7Tn" target="_blank">智能组</a>
+            </li>
+            <li style="font-size: medium;"><a href="https://www.bilibili.com/video/BV1Xy4y1i73Y" target="_blank">开发组</a>
+            </li>
+            <li style="font-size: medium;"><a href="https://www.bilibili.com/video/BV1Kw411Z7Kx"
+                    target="_blank">暑期培训</a></li>
+        </ul>
+        <hr>
+        <div class="row">
+            <a href="https://www.bilibili.com/video/BV1Ey4y1U78L" target="_blank">
+                <div class="col-lg-2">
+                    <h3 class="glyphicon glyphicon-facetime-video" style="font-weight: normal;"> 宣传片</h3>
+                </div>
+                <div class="col-lg-4 cta-btn-container text-center">
+                    <img src="img/宣传片.jpg" style="width: 350px; height: 200px;" alt="">
+                </div>
+            </a>
+            <a href="https://www.bilibili.com/video/BV1ho4y1Z7Tn" target="_blank">
+                <div class="col-lg-2">
+                    <h3 class="glyphicon glyphicon-adjust" style="font-weight: normal;"> 智能组</h3>
+                </div>
+                <div class="col-lg-4 cta-btn-container text-center">
+                    <img src="img/智能组.jpg" style="width: 350px; height: 200px;" alt="">
+                </div>
+            </a>
+        </div>
+        <br><br>
+        <div class="row">
+            <a href="https://www.bilibili.com/video/BV1Xy4y1i73Y" target="_blank">
+                <div class="col-lg-2">
+                    <h3 class="glyphicon glyphicon-play" style="font-weight: normal;"> 开发组</h3>
+                </div>
+                <div class="col-lg-4 cta-btn-container text-center">
+                    <img src="img/开发组.jpg" style="width: 350px; height: 200px;" alt="">
+                </div>
+            </a>
+            <a href="https://www.bilibili.com/video/BV1Kw411Z7Kx" target="_blank">
+                <div class="col-lg-2">
+                    <h3 class="glyphicon glyphicon-arrow-right" style="font-weight: normal;"> 暑期培训</h3>
+                </div>
+                <div class="col-lg-4 cta-btn-container text-center">
+                    <img src="img/暑假.jpg" style="width: 350px; height: 200px;" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 分组情况 -->
+    <div class="fz">
+        <div class="container">
+            <h1 id="tag4" style="font-weight: bolder;">分组情况</h1>
+            <img id="heng" src="img/heng.jpg">
+            <br> <br>
+            <p class="zi" style="font-size: medium;">启明星工作室目前根据总体的发展方向不同分为开发组和智能组,同学们可以根据自己的喜好的不同自由选择。</p>
+            <div class="row">
+                <!-- 开发组 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="box">
+                        <div class="jumbotron" style="text-align: center; border-radius: 5%; background-color: #fff;">
+                            <h3 style="font-weight: bolder;">开发组</h3>
+                            <hr>
+                            <h4>
+                                <span style="color: green; font-size: 40px; font-style: italic;">21</span> / 39
+                            </h4> <br>
+                            <p style="font-size: 15px;">主要学习</p>
+                            <p style="font-size: 15px;">超文本标记语言HTML</p>
+                            <p style="font-size: 15px;">脚本语言JavaScript</p>
+                            <p style="font-size: 15px;">编程语言JAVA,PHP等</p>
+                            <p style="font-size: 15px;">WEB后台服务器的管理</p>
+                            <hr>
+                            <p><a class="btn btn-primary btn-lg" href="#tag5" role="button">点击报名</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 智能组 -->
+                <div class="col-lg-6 col-md-6" style="align-content: center;">
+                    <div class="box">
+                        <div class="jumbotron" style="text-align: center; border-radius: 5%; background-color: #fff;">
+                            <h3 style="font-weight: bolder;">智能组</h3>
+                            <hr>
+                            <h4>
+                                <span style="color: green; font-size: 40px; font-style: italic;">18</span> / 39
+                            </h4> <br>
+                            <p style="font-size: 15px;">主要学习</p>
+                            <p style="font-size: 15px;">51,AVR,STM32,ARDUINO单片机开发</p>
+                            <p style="font-size: 15px;">涉足嵌入式系统及智能硬件开发</p>
+                            <p style="font-size: 15px;">集了众多喜欢编程</p>
+                            <p style="font-size: 15px;">热爱硬件设计与开发的三大学子</p>
+                            <hr>
+                            <p><a class="btn btn-primary btn-lg" href="#tag5" role="button">点击报名</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 报名 -->
+    <div class="bm container">
+        <h1 id="tag5" style="font-weight: bolder;">欢迎报考启明星</h1>
+        <img id="heng" src="img/heng.jpg">
+        <br> <br>
+        <p class="zi" style="font-size: medium;">快来填写你的信息，加入我们吧！</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="address">
+                    <h2 class="glyphicon glyphicon-map-marker" style="font-weight: bold; font-size: 25px;"> 招新宣讲会地点
+                    </h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;"> 湖北省宜昌市三峡大学信息科学楼</p>
+                </div>
+                <div class="email">
+                    <h2 class="glyphicon glyphicon-envelope" style="font-weight: bold; font-size: 25px;"> Email</h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;">ctguqmx@iloveyxr.top</p>
+                </div>
+                <div class="phone">
+                    <h2 class="glyphicon glyphicon-earphone" style="font-weight: bold; font-size: 25px;"> Call</h2>
+                    <p style="font-size: 15px; text-indent: 3.4em;">17786170105</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <form action="#" class="form-horizontal" role="form">
+                    <br>
+                    <!-- 姓名与学号 -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="uname" class="control-label col-md-3">姓名</label>
+                            <div class="col-md-9">
+                                <input type="text" id="uname" class="form-control" placeholder="请输入姓名">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="upwd" class="control-label col-md-3">学号</label>
+                            <div class="col-md-9">
+                                <input type="text" id="upwd" class="form-control" placeholder="请输入密码">
+                            </div>
+                        </div>
+                    </div> <br>
+                    <!-- 性别与报名组别 -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-3">性别</label>
+                            <div class="col-md-9">
+                                <select class="form-control">
+                                    <option>请选择性别</option>
+                                    <option>男</option>
+                                    <option>女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-3">组别</label>
+                            <div class="col-md-9">
+                                <select class="form-control">
+                                    <option>请选择报名组别</option>
+                                    <option>智能组</option>
+                                    <option>开发组</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> <br>
+                    <!-- 电话与QQ -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="uname" class="control-label col-md-3">电话</label>
+                            <div class="col-md-9">
+                                <input type="text" id="uname" class="form-control" placeholder="请输入电话">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="upwd" class="control-label col-md-3">QQ</label>
+                            <div class="col-md-9">
+                                <input type="text" id="upwd" class="form-control" placeholder="请输入QQ">
+                            </div>
+                        </div>
+                    </div> <br>
+                    <!-- 专业类别 -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-3">专业</label>
+                            <div class="col-md-9">
+                                <select class="form-control">
+                                    <option>请选择专业类别</option>
+                                    <option>计算机科学与技术</option>
+                                    <option>数字科学与大数据技术</option>
+                                    <option>数字媒体技术</option>
+                                    <option>物联网工程</option>
+                                    <option>电子信息类</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <!-- 提交按钮 -->
+                            <div class="form-group">
+                                <div class="col-md-offset-6"><button class="btn btn-primary">点击提交</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="bottom" style="text-align: center;">
+        <h2 style="font-size: 35px; color: white; font-weight: bold;">启明星工作室</h2> <br>
+        <p style="font-weight: bold; font-style: italic; color: white;">Make a difference.</p>
+        <img src="img/小图标.jpg" alt="" style="height: 70px; width: 180px;">
+        <br> <br>
+        <p style="font-weight: bold; color: white;">Copyright © 2020.三峡大学启明星工作室</p>
+    </div>
+</body>
+
+</html>
